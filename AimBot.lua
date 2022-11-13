@@ -315,53 +315,53 @@ local FieldOfViewBOX = GeneralTab:AddLeftTabbox("Field Of View") do
     end)
 end
 
--- local CreateConfigurationBOX = GeneralTab:AddRightTabbox("Create Configuration") do 
---     local Main = CreateConfigurationBOX:AddTab("Create Configuration")
+local CreateConfigurationBOX = GeneralTab:AddRightTabbox("Create Configuration") do 
+    local Main = CreateConfigurationBOX:AddTab("Create Configuration")
     
---     Main:AddInput("CreateConfigTextBox", {Default = "", Numeric = false, Finished = false, Text = "Create Configuration to Create", Tooltip = "Creates a configuration file containing settings you can save and load", Placeholder = "File Name here"}):OnChanged(function()
---         if Options.CreateConfigTextBox.Value and string.len(Options.CreateConfigTextBox.Value) ~= "" then 
---             FileToSave = Options.CreateConfigTextBox.Value
---         end
---     end)
+    Main:AddInput("CreateConfigTextBox", {Default = "", Numeric = false, Finished = false, Text = "Create Configuration to Create", Tooltip = "Creates a configuration file containing settings you can save and load", Placeholder = "File Name here"}):OnChanged(function()
+        if Options.CreateConfigTextBox.Value and string.len(Options.CreateConfigTextBox.Value) ~= "" then 
+            FileToSave = Options.CreateConfigTextBox.Value
+        end
+    end)
     
---     Main:AddButton("Create Configuration File", function()
---         if FileToSave ~= "" or FileToSave ~= nil then 
---             UpdateFile(FileToSave)
---         end
---     end)
--- end
+    Main:AddButton("Create Configuration File", function()
+        if FileToSave ~= "" or FileToSave ~= nil then 
+            UpdateFile(FileToSave)
+        end
+    end)
+end
 
--- local SaveConfigurationBOX = GeneralTab:AddRightTabbox("Save Configuration") do 
---     local Main = SaveConfigurationBOX:AddTab("Save Configuration")
---     Main:AddDropdown("SaveConfigurationDropdown", {Values = GetFiles(), Text = "Choose Configuration to Save"})
---     Main:AddButton("Save Configuration", function()
---         if Options.SaveConfigurationDropdown.Value then 
---             UpdateFile(Options.SaveConfigurationDropdown.Value)
---         end
---     end)
--- end
+local SaveConfigurationBOX = GeneralTab:AddRightTabbox("Save Configuration") do 
+    local Main = SaveConfigurationBOX:AddTab("Save Configuration")
+    Main:AddDropdown("SaveConfigurationDropdown", {Values = GetFiles(), Text = "Choose Configuration to Save"})
+    Main:AddButton("Save Configuration", function()
+        if Options.SaveConfigurationDropdown.Value then 
+            UpdateFile(Options.SaveConfigurationDropdown.Value)
+        end
+    end)
+end
 
--- local LoadConfigurationBOX = GeneralTab:AddRightTabbox("Load Configuration") do 
---     local Main = LoadConfigurationBOX:AddTab("Load Configuration")
+local LoadConfigurationBOX = GeneralTab:AddRightTabbox("Load Configuration") do 
+    local Main = LoadConfigurationBOX:AddTab("Load Configuration")
     
---     Main:AddDropdown("LoadConfigurationDropdown", {Values = GetFiles(), Text = "Choose Configuration to Load"})
---     Main:AddButton("Load Configuration", function()
---         if table.find(GetFiles(), Options.LoadConfigurationDropdown.Value) then
---             LoadFile(Options.LoadConfigurationDropdown.Value)
+    Main:AddDropdown("LoadConfigurationDropdown", {Values = GetFiles(), Text = "Choose Configuration to Load"})
+    Main:AddButton("Load Configuration", function()
+        if table.find(GetFiles(), Options.LoadConfigurationDropdown.Value) then
+            LoadFile(Options.LoadConfigurationDropdown.Value)
             
---             Toggles.TeamCheck:SetValue(SilentAimSettings.TeamCheck)
---             Toggles.VisibleCheck:SetValue(SilentAimSettings.VisibleCheck)
---             Options.TargetPart:SetValue(SilentAimSettings.TargetPart)
---             Options.Method:SetValue(SilentAimSettings.SilentAimMethod)
---             Toggles.Visible:SetValue(SilentAimSettings.FOVVisible)
---             Options.Radius:SetValue(SilentAimSettings.FOVRadius)
---             Toggles.MousePosition:SetValue(SilentAimSettings.ShowSilentAimTarget)
---             Toggles.Prediction:SetValue(SilentAimSettings.MouseHitPrediction)
---             Options.Amount:SetValue(SilentAimSettings.MouseHitPredictionAmount)
---             Options.HitChance:SetValue(SilentAimSettings.HitChance)
---         end
---     end)
--- end
+            Toggles.TeamCheck:SetValue(SilentAimSettings.TeamCheck)
+            Toggles.VisibleCheck:SetValue(SilentAimSettings.VisibleCheck)
+            Options.TargetPart:SetValue(SilentAimSettings.TargetPart)
+            Options.Method:SetValue(SilentAimSettings.SilentAimMethod)
+            Toggles.Visible:SetValue(SilentAimSettings.FOVVisible)
+            Options.Radius:SetValue(SilentAimSettings.FOVRadius)
+            Toggles.MousePosition:SetValue(SilentAimSettings.ShowSilentAimTarget)
+            Toggles.Prediction:SetValue(SilentAimSettings.MouseHitPrediction)
+            Options.Amount:SetValue(SilentAimSettings.MouseHitPredictionAmount)
+            Options.HitChance:SetValue(SilentAimSettings.HitChance)
+        end
+    end)
+end
 
 resume(create(function()
     RenderStepped:Connect(function()
