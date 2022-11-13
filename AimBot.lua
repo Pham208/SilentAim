@@ -8,13 +8,13 @@ if not syn or not protectgui then
 end
 
 local SilentAimSettings = {
-    Enabled = true,
+    Enabled = false,
     
     ClassName = "Aim By Pham208",
     ToggleKey = "RightCtrl",
     
     TeamCheck = true,
-    VisibleCheck = true, 
+    VisibleCheck = true,
     TargetPart = "HumanoidRootPart",
     SilentAimMethod = "Mouse.Hit/Target",
     
@@ -59,7 +59,7 @@ local ValidTargetParts = {"Head", "HumanoidRootPart"}
 local PredictionAmount = 1
 
 local mouse_box = Drawing.new("Square")
-mouse_box.Visible = true 
+mouse_box.Visible = false 
 mouse_box.ZIndex = 999 
 mouse_box.Color = Color3.fromRGB(115, 219, 132)
 mouse_box.Thickness = 10 
@@ -67,7 +67,7 @@ mouse_box.Size = Vector2.new(20, 20)
 mouse_box.Filled = true 
 
 local fov_circle = Drawing.new("Circle")
-fov_circle.Thickness = .5
+fov_circle.Thickness = 0.5
 fov_circle.NumSides = 90
 fov_circle.Radius = 90
 fov_circle.Filled = false
