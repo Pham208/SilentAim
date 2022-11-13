@@ -10,7 +10,7 @@ end
 local SilentAimSettings = {
     Enabled = true,
     
-    ClassName = "Aim by PAP",
+    ClassName = "Aim By PAP",
     ToggleKey = "LeftCtrl",
     
     TeamCheck = true,
@@ -3176,7 +3176,7 @@ end;
 
 return Library
 -- end ui 
-Library:SetWatermark("PAPNINEONE")
+Library:SetWatermark("https://github.com/Pham208")
 
 local Window = Library:CreateWindow("SILENT AIM BY PAPNINEONE")
 local GeneralTab = Window:AddTab("General")
