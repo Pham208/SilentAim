@@ -10,7 +10,7 @@ end
 local SilentAimSettings = {
     Enabled = true,
     
-    ClassName = "Aim By PAP",
+    ClassName = "Aim By Pham208",
     ToggleKey = "RightCtrl",
     
     TeamCheck = true,
@@ -240,10 +240,10 @@ local function getClosestPlayer()
 end
 
 -- ui creating & handling
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pham208/SilentAim/main/source"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pham208/SilentAim/main/source.lua"))()
 Library:SetWatermark("github.com/Pham208")
 
-local Window = Library:CreateWindow("SILENT AIM BY PAPNINEONE")
+local Window = Library:CreateWindow("SILENT AIM BY Pham208")
 local GeneralTab = Window:AddTab("General")
 local MainBOX = GeneralTab:AddLeftTabbox("Main") do
     local Main = MainBOX:AddTab("Main")
