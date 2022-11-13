@@ -11,7 +11,7 @@ local SilentAimSettings = {
     Enabled = true,
     
     ClassName = "Aim By PAP",
-    ToggleKey = "LeftCtrl",
+    ToggleKey = "RightCtrl",
     
     TeamCheck = true,
     VisibleCheck = true, 
@@ -277,7 +277,7 @@ local MainBOX = GeneralTab:AddLeftTabbox("Main") do
     end)
     Main:AddSlider('HitChance', {
         Text = 'Hit chance',
-        Default = 100,
+        Default = 97,
         Min = 0,
         Max = 100,
         Rounding = 1,
