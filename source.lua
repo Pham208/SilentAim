@@ -30,7 +30,7 @@ local Library = {
     FontColor = Color3.fromRGB(255, 255, 255);
     MainColor = Color3.fromRGB(28, 28, 28);
     BackgroundColor = Color3.fromRGB(20, 20, 20);
-    AccentColor = Color3.fromRGB(0, 85, 255);
+    AccentColor = Color3.fromRGB(141, 253, 244);
     OutlineColor = Color3.fromRGB(50, 50, 50);
 
     Black = Color3.new(0, 0, 0);
@@ -2538,13 +2538,13 @@ function Library:CreateWindow(...)
             Parent = TabFrame;
         });
 
-        local RightSide = Library:Create('Frame', {
-            BackgroundTransparency = 1;
-            Position = UDim2.new(0.5, 4, 0, 8);
-            Size = UDim2.new(0.5, -12, 0, 507);
-            ZIndex = 2;
-            Parent = TabFrame;
-        });
+        -- local RightSide = Library:Create('Frame', {
+        --     BackgroundTransparency = 1;
+        --     Position = UDim2.new(0.5, 4, 0, 8);
+        --     Size = UDim2.new(0.5, -12, 0, 507);
+        --     ZIndex = 2;
+        --     Parent = TabFrame;
+        -- });
 
         Library:Create('UIListLayout', {
             Padding = UDim.new(0, 8);
@@ -2553,12 +2553,12 @@ function Library:CreateWindow(...)
             Parent = LeftSide;
         });
 
-        Library:Create('UIListLayout', {
-            Padding = UDim.new(0, 8);
-            FillDirection = Enum.FillDirection.Vertical;
-            SortOrder = Enum.SortOrder.LayoutOrder;
-            Parent = RightSide;
-        });
+        -- Library:Create('UIListLayout', {
+        --     Padding = UDim.new(0, 8);
+        --     FillDirection = Enum.FillDirection.Vertical;
+        --     SortOrder = Enum.SortOrder.LayoutOrder;
+        --     Parent = RightSide;
+        -- });
 
         function Tab:ShowTab()
             for _, Tab in next, Window.Tabs do
@@ -2888,32 +2888,32 @@ function Library:CreateWindow(...)
         Parent = ScreenGui;
     });
 
-    function Library.Toggle()
-        Outer.Visible = not Outer.Visible;
-        ModalElement.Modal = Outer.Visible;
+    -- function Library.Toggle()
+    --     Outer.Visible = not Outer.Visible;
+    --     ModalElement.Modal = Outer.Visible;
 
-        local oIcon = Mouse.Icon;
-        local State = InputService.MouseIconEnabled;
+    --     local oIcon = Mouse.Icon;
+    --     local State = InputService.MouseIconEnabled;
 
-        local Cursor = Drawing.new('Triangle');
-        Cursor.Thickness = 1;
-        Cursor.Filled = true;
+    --     local Cursor = Drawing.new('Triangle');
+    --     Cursor.Thickness = 1;
+    --     Cursor.Filled = true;
 
-        while Outer.Visible do
-            local mPos = workspace.CurrentCamera:WorldToViewportPoint(Mouse.Hit.p);
+    --     while Outer.Visible do
+    --         local mPos = workspace.CurrentCamera:WorldToViewportPoint(Mouse.Hit.p);
 
-            Cursor.Color = Library.AccentColor;
-            Cursor.PointA = Vector2.new(mPos.X, mPos.Y);
-            Cursor.PointB = Vector2.new(mPos.X, mPos.Y) + Vector2.new(6, 14);
-            Cursor.PointC = Vector2.new(mPos.X, mPos.Y) + Vector2.new(-6, 14);
+    --         Cursor.Color = Library.AccentColor;
+    --         Cursor.PointA = Vector2.new(mPos.X, mPos.Y);
+    --         Cursor.PointB = Vector2.new(mPos.X, mPos.Y) + Vector2.new(6, 14);
+    --         Cursor.PointC = Vector2.new(mPos.X, mPos.Y) + Vector2.new(-6, 14);
 
-            Cursor.Visible = not InputService.MouseIconEnabled;
+    --         Cursor.Visible = not InputService.MouseIconEnabled;
 
-            RenderStepped:Wait();
-        end;
+    --         RenderStepped:Wait();
+    --     end;
 
-        Cursor:Remove();
-    end
+    --     Cursor:Remove();
+    -- end
 
     Library:GiveSignal(InputService.InputBegan:Connect(function(Input, Processed)
         if type(Library.ToggleKeybind) == 'table' and Library.ToggleKeybind.Type == 'KeyPicker' then
