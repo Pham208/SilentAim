@@ -8,7 +8,7 @@ if not syn or not protectgui then
 end
 
 local SilentAimSettings = {
-    Enabled = false,
+    Enabled = true,
     
     ClassName = "Aim By Pham208",
     ToggleKey = "Rightctrl",
@@ -18,13 +18,13 @@ local SilentAimSettings = {
     TargetPart = "HumanoidRootPart",
     SilentAimMethod = "Mouse.Hit/Target",
     
-    FOVRadius = 130,
+    FOVRadius = 140,
     FOVVisible = true,
     ShowSilentAimTarget = true, 
     
     MouseHitPrediction = false,
     MouseHitPredictionAmount = 1,
-    HitChance = 97
+    HitChance = 100
 }
 
 -- variables
@@ -68,8 +68,8 @@ mouse_box.Filled = true
 
 local fov_circle = Drawing.new("Circle")
 fov_circle.Thickness = 1
-fov_circle.NumSides = 90
-fov_circle.Radius = 90
+fov_circle.NumSides = 140
+fov_circle.Radius = 140
 fov_circle.Filled = false
 fov_circle.Visible = false
 fov_circle.ZIndex = 999
@@ -277,7 +277,7 @@ local MainBOX = GeneralTab:AddLeftTabbox("Main") do
     end)
     Main:AddSlider('HitChance', {
         Text = 'Hit chance',
-        Default = 97,
+        Default = 100,
         Min = 0,
         Max = 100,
         Rounding = 1,
