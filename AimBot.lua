@@ -8,7 +8,7 @@ if not syn or not protectgui then
 end
 
 local SilentAimSettings = {
-    Enabled = true,
+    Enabled = false,
     
     ClassName = "Aim By Pham208",
     ToggleKey = "Rightctrl",
@@ -67,7 +67,7 @@ mouse_box.Size = Vector2.new(20, 20)
 mouse_box.Filled = true 
 
 local fov_circle = Drawing.new("Circle")
-fov_circle.Thickness = 0.5
+fov_circle.Thickness = 1
 fov_circle.NumSides = 90
 fov_circle.Radius = 90
 fov_circle.Filled = false
