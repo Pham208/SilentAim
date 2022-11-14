@@ -8,7 +8,7 @@ if not syn or not protectgui then
 end
 
 local SilentAimSettings = {
-    Enabled = true,
+    Enabled = false,
     
     ClassName = "Aim By Pham208",
     ToggleKey = "Rightctrl",
@@ -18,7 +18,7 @@ local SilentAimSettings = {
     TargetPart = "HumanoidRootPart",
     SilentAimMethod = "Mouse.Hit/Target",
     
-    FOVRadius = 140,
+    FOVRadius = 130,
     FOVVisible = true,
     ShowSilentAimTarget = true, 
     
@@ -68,15 +68,15 @@ mouse_box.Filled = true
 
 local fov_circle = Drawing.new("Circle")
 fov_circle.Thickness = 1
-fov_circle.NumSides = 140
-fov_circle.Radius = 140
+fov_circle.NumSides = 90
+fov_circle.Radius = 90
 fov_circle.Filled = false
 fov_circle.Visible = false
 fov_circle.ZIndex = 999
 fov_circle.Transparency = 1
 fov_circle.Color = Color3.fromRGB(32, 196, 59)
 
-local ExpectedArguments = {
+local ExpectedArguments = {98
     FindPartOnRayWithIgnoreList = {
         ArgCountRequired = 3,
         Args = {
@@ -268,7 +268,8 @@ local MainBOX = GeneralTab:AddLeftTabbox("Main") do
         SilentAimSettings.TargetPart = Options.TargetPart.Value
     end)
     Main:AddDropdown("Method", {Text = "Silent Aim Method", Default = SilentAimSettings.SilentAimMethod, Values = {
-        "Raycast","FindPartOnRay",
+        "Raycast",
+        "FindPartOnRay",
         "FindPartOnRayWithWhitelist",
         "FindPartOnRayWithIgnoreList",
         "Mouse.Hit/Target"
