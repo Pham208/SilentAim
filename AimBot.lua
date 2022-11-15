@@ -11,7 +11,7 @@ local SilentAimSettings = {
     Enabled = true,
     
     ClassName = "Aim By Pham208",
-    ToggleKey = "Rightctrl",
+    ToggleKey = "RightAlt",
     
     TeamCheck = true,
     VisibleCheck = true,
