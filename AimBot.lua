@@ -76,7 +76,7 @@ fov_circle.ZIndex = 999
 fov_circle.Transparency = 1
 fov_circle.Color = Color3.fromRGB(32, 196, 59)
 
-local ExpectedArguments = {98
+local ExpectedArguments = {
     FindPartOnRayWithIgnoreList = {
         ArgCountRequired = 3,
         Args = {
