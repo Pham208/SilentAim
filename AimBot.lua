@@ -128,12 +128,11 @@ end
 local Files = listfiles(string.format("%s/%s", "PAPSILENTAIM", tostring(game.PlaceId)))
 
 -- functions
-local function GetFiles() -- credits to the linoria lib for this function, listfiles returns the files full path and its annoying
+local function GetFiles()
 	local out = {}
 	for i = 1, #Files do
 		local file = Files[i]
 		if file:sub(-4) == '.lua' then
-			-- i hate this but it has to be done ...
 
 			local pos = file:find('.lua', 1, true)
 			local start = pos
