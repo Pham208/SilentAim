@@ -13,8 +13,8 @@ local SilentAimSettings = {
     ClassName = "Aim By Pham208",
     ToggleKey = "RightAlt",
     
-    TeamCheck = true,
-    VisibleCheck = true,
+    TeamCheck = false,
+    VisibleCheck = false,
     TargetPart = "HumanoidRootPart",
     SilentAimMethod = "Mouse.Hit/Target",
     
@@ -239,9 +239,9 @@ local function getClosestPlayer()
     return Closest
 end
 
--- ui creating & handling
+-- UI CREATING & HANDLING
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Pham208/SilentAim/main/source.lua"))()
-Library:SetWatermark("github.com/Pham208")
+Library:SetWatermark("https://github.com/Pham208")
 
 local Window = Library:CreateWindow("SILENT AIM BY Pham208")
 local GeneralTab = Window:AddTab("General")
@@ -283,7 +283,7 @@ local MainBOX = GeneralTab:AddLeftTabbox("Main") do
         Max = 100,
         Rounding = 1,
     
-        Compact = false,
+        Compact = true,
     })
     Options.HitChance:OnChanged(function()
         SilentAimSettings.HitChance = Options.HitChance.Value
@@ -369,13 +369,11 @@ resume(create(function()
         if Toggles.MousePosition.Value and Toggles.aim_Enabled.Value then
             if getClosestPlayer() then 
                 local Root = getClosestPlayer().Parent.PrimaryPart or getClosestPlayer()
-                local RootToViewportPoint, IsOnScreen = WorldToViewportPoint(Camera, Root.Position);
-                -- using PrimaryPart instead because if your Target Part is "Random" it will flicker the square between the Target's Head and HumanoidRootPart (its annoying)
-                
+                local RootToViewportPoint, IsOnScreen = WorldToViewportPoint(Camera, Root.Position);                
                 mouse_box.Visible = IsOnScreen
                 mouse_box.Position = Vector2.new(RootToViewportPoint.X, RootToViewportPoint.Y)
             else 
-                mouse_box.Visible = false 
+                mouse_box.Visible = true 
                 mouse_box.Position = Vector2.new()
             end
         end
