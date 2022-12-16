@@ -8,7 +8,7 @@ if not syn or not protectgui then
 end
 
 local SilentAimSettings = {
-    Enabled = true,
+    Enabled = false,
     
     ClassName = "Aim By Pham208",
     ToggleKey = "RightAlt",
@@ -19,8 +19,8 @@ local SilentAimSettings = {
     SilentAimMethod = "Mouse.Hit/Target",
     
     FOVRadius = 140,
-    FOVVisible = true,
-    ShowSilentAimTarget = true, 
+    FOVVisible = fasle,
+    ShowSilentAimTarget = false, 
     
     MouseHitPrediction = false,
     MouseHitPredictionAmount = 1,
@@ -71,7 +71,7 @@ fov_circle.Thickness = 1
 fov_circle.NumSides = 90
 fov_circle.Radius = 140
 fov_circle.Filled = false
-fov_circle.Visible = true
+fov_circle.Visible = false
 fov_circle.ZIndex = 999
 fov_circle.Transparency = 1
 fov_circle.Color = Color3.fromRGB(32, 196, 59)
@@ -282,7 +282,7 @@ local MainBOX = GeneralTab:AddLeftTabbox("Main") do
         Max = 100,
         Rounding = 1,
     
-        Compact = true,
+        Compact = false,
     })
     Options.HitChance:OnChanged(function()
         SilentAimSettings.HitChance = Options.HitChance.Value
